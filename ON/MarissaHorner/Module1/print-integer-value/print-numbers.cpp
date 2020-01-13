@@ -1,6 +1,6 @@
-# include <iostream>
+#include<iostream>
 
-using namspace std;
+using namespace std;
 
 int main(){
     int x=17;
