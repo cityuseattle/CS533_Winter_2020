@@ -1,6 +1,10 @@
 #include <iostream>
+
 using namespace std;
 
 int main(){
-    cout <<  "Hello"; 
+	int x = 2020;
+	cout<<"Hello \n"<<x;
+
+	return 0;
 }
