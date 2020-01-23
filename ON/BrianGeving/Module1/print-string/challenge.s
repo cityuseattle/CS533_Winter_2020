@@ -1,6 +1,6 @@
-        .data         # expect data
+        .data         # expect data from here
 hello:  .asciiz "Hello \n"    # ascii text "Hello \n" at address hello
-        .text         # expect code
+        .text         # expect code from here
 
 main:                 # label for main entry
         li $v0, 4     # load immediate with system call 4 for string
