@@ -5,7 +5,7 @@ zero_string:    .asciiz "\nChoice is 0 \n"
 one_string:     .asciiz "\nChoice is 1 \n"
 two_string:     .asciiz "\nChoice is 2 \n"
 fifty_string:   .asciiz "\nChoice is 50 \n"
-Def_string:     .asciiz "Print default \n"
+Def_string:     .asciiz "\nPrint default \n"
                 .text
 main:
         li		$v0, 4
