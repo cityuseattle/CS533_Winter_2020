@@ -2,4 +2,5 @@
 *.out*
 *.vscode
 *.gitignore.swp
+*.DS_Store
 
