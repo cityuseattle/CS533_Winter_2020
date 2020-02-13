@@ -7,7 +7,7 @@ hello:  .asciiz"Hello"
 world:  .asciiz"World \n"
         .text
 
-        bne     $t0, $t1, end_if
+        beq     $t0, $t1, end_if
 
 
         li      $v0, 4
