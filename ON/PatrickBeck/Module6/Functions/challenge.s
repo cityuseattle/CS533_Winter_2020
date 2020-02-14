@@ -11,16 +11,19 @@ displayMsg:
                     
 fact:
                     beqz      $a0, return1                  # check if a0=0, jump to return label to return 1
-                    bne       $a0, 1, return2               # check if a0=1, jump to return label to return 2
+                    beq       $a0, 1, return2               # check if a0=1, jump to return label to return 2
 
                     li        $t1, 0                        # t1=0 int a
                     li        $t2, 1                        # t2=1 int b
                     li        $v0, 0                        # v0=0 int c
-                    li        $t0, 1                        # t0=1 loop iterator
+                    li        $t0, 0                        # t0=0 loop iterator
+
+                    li        $t5, 2
+                    sub       $t7, $a0, $t5                 # $t7 = $a0 - $t5
 
 
 fact_loop:
-                    bgt       $t0, $a0, end_fact_loop       # check the condition, if true then jump to the end, else
+                    bgt       $t0, $t7, end_fact_loop       # check the condition, if true then jump to the end, else
                                                             # continue executing the loop (i <= n)
                     
                     add       $v0, $t1, $t2                 # v0 = t1 + t2 (c = a+b)
@@ -28,8 +31,6 @@ fact_loop:
                     move      $t2, $v0                      # move $v0 to $t2 (b = c)
                     
                     addi      $t0, $t0, 1                   # t0++
-                    sub       $a0, $a0, 2                   # $a0 = $a0-2 (i<= n-2)
-                    
 
                     j         fact_loop                     # jump to fact_loop to check the condition
 
