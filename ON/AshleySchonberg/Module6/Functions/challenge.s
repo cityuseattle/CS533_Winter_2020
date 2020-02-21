@@ -1,5 +1,6 @@
         .data
 n1:     .asciiz "\n"
+prompt: .asciiz "Enter an integer: "
         .text
 
 fact:
@@ -25,8 +26,16 @@ return1:
         jr      $ra
 
 main:
-        li      $a0, 6                      # a0 = 6
-        jal	fact				        # jump to fact and save position to $ra
+        li      $v0, 4
+        la		$a0, prompt
+        syscall        
+
+        li		$v0, 5
+        move    $a0, $v0
+        syscall
+
+        #li      $a0, 6                      # a0 = 6
+        jal		fact				        # jump to fact and save position to $ra
 
         move 	$t0, $v0                    # after func ends, move v0 value to t0
 
@@ -51,5 +60,3 @@ main:
 
         li      $v0, 10
         syscall
-        
-        
