@@ -1,3 +1,4 @@
+
         .data
 n1:     .asciiz "\n"
 msg:    .asciiz "The answer is: "
